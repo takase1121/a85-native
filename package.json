@@ -1,8 +1,14 @@
 {
   "name": "a85-native",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js binding for larskholte/a85",
-  "keywords": ["ascii85", "encode", "decode", "btoa", "binary-to-text"],
+  "keywords": [
+    "ascii85",
+    "encode",
+    "decode",
+    "btoa",
+    "binary-to-text"
+  ],
   "main": "index.js",
   "gypfile": true,
   "scripts": {
