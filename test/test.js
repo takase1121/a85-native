@@ -1,19 +1,25 @@
 const ascii85 = require('..');
 const worker = require('worker_threads');
 
+const assert = require('assert').strict;
 
-console.log('Encode test:');
-const src = Buffer.from('Hello world!')
-const result = ascii85.stringify(src);
-console.log('Encode result:', src, '->', result);
-
-console.log('Decode test:');
-const result2 = ascii85.parse(result);
-console.log('Decoding result:', result, '->', result2);
-
-console.log('Context-awareness test:');
 if (worker.isMainThread) {
+    process.stdout.write('Encode test: ');
+    const src = Buffer.from('Hello world!')
+    const result = ascii85.stringify(src);
+    assert.equal(result, '87cURD]j7BEbo80', 'Assertion failed for encoding test');
+    console.log('OK');
+
+    process.stdout.write('Decode test: ');
+    const result2 = ascii85.parse(result);
+    assert.ok(src.equals(result2), 'Assertion failed for decoding test');
+    console.log('OK');
+
+    process.stdout.write('Context-awareness test: ');
     const wk = new worker.Worker(__filename);
+    wk.ref();
+    wk.once('message', () => console.log('OK'));
+    wk.once('error', () => console.log('FAIL'));
 } else {
-    console.log('Worker passed the test.');
+    worker.parentPort.postMessage(true);
 }
