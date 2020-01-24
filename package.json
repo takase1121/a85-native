@@ -1,13 +1,13 @@
 {
   "name": "a85-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js binding for larskholte/a85",
   "main": "index.js",
   "gypfile": true,
   "scripts": {
     "build": "node-gyp rebuild",
     "clean": "node-gyp clean",
-    "test" : "npm run build && node test/test"
+    "test": "npm run build && node test/test"
   },
   "author": "Takase",
   "license": "ISC",
