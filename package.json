@@ -1,6 +1,6 @@
 {
   "name": "a85-native",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Node.js binding for larskholte/a85",
   "keywords": [
     "ascii85",
