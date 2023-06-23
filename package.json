@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "node-addon-api": "^2.0.0",
-    "node-gyp": "^6.1.0"
+    "node-gyp": "^9.4.0"
   },
   "repository": "takase1121/a85-native",
   "bugs": {
